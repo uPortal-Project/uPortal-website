@@ -1705,18 +1705,18 @@ a.back-to-top:hover,a.back-to-top:focus{
     animation-name:fadeIn
 }
 #main-slide .carousel-item{
-    height:350px;
+    height:450px;
     background-position:center center;
     background-size:cover
 }
 @media only screen and (min-width:1400px){
     #main-slide .carousel-item{
-        height:350px
+        height:450px
     }
 }
 @media(max-width:767px){
     #main-slide .carousel-item{
-        height:350px
+        height:450px
     }
 }
 #main-slide .carousel-inner .carousel-item::after{
@@ -1738,7 +1738,7 @@ a.back-to-top:hover,a.back-to-top:focus{
     color:#fff;
     text-transform:uppercase;
     letter-spacing:.1rem;
-    margin-top:0px
+    margin-top:30px;
 }
 @media only screen and (min-width:992px) and (max-width:1199px){
     #main-slide .carousel-item .carousel-caption .heading{
