@@ -9,7 +9,7 @@
   optimus/optimus       {:mvn/version "2023-02-08"}
   ring/ring             {:mvn/version "1.10.0"}
   ring/ring-defaults    {:mvn/version "0.3.4"}
-  stasis/stasis         {:mvn/version "2.5.1"}
+  stasis/stasis         {:mvn/version "2023.06.03"}
   com.taoensso/timbre   {:mvn/version "6.2.2"}}
 
  :aliases
