@@ -10,8 +10,15 @@
     [:meta {:name "viewport"
             :content "width=device-width, initial-scale=1.0"}]
     [:title "Tech blog"]
-    [:link {:rel "stylesheet" :href (link/file-path request "/styles/main.css")}]
-    [:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]]
-   [:body
-    [:div.logo "cjohansen.no"]
-    [:div.body page]]))
+    [:link {:rel "stylesheet" :href "/styles/main.css"}]
+    [:link {:rel "stylesheet" :href "/styles/animate.css"}]
+    [:link {:rel "stylesheet" :href "/styles/bootstrap.min.css"}]
+    [:link {:rel "stylesheet" :href "/styles/nivo-lightbox.css"}]
+    [:link {:rel "stylesheet" :href "/styles/responsive.css"}]
+    [:link {:rel "stylesheet" :href (link/file-path request "/styles/slicknav.css")}]
+	[:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]
+	]
+    [:body
+     [:div.logo "cjohansen.no"]
+     [:div.body page]]))
+ 
