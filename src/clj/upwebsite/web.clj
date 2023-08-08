@@ -21,7 +21,7 @@
 (defn partial-pages [pages]
   (zipmap (keys pages)
           (map #(fn [req] (layout/layout-page req %)) (vals pages))))
-
+		
 (defn markdown-pages [pages]
   (zipmap (map #(str/replace % #"\.md$" ".html") (keys pages))
           (map #(fn [req] (layout/layout-page req (md/md-to-html-string %)))
