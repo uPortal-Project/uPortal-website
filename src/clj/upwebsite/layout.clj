@@ -53,12 +53,16 @@
       [:div#navbarSupportedContent.collapse.navbar-collapse
        [:ul.navbar-nav.ml-auto
         [:li.nav-item.active
-         [:a.page-scroll {:href "#header-wrap"} "Home"]]
+         [:a.page-scroll {:href "./index.html"} "Home"]]
         [:li.nav-item
-         [:a.page-scroll {:href "#about"} "About"]]]]]]]
+         [:a.page-scroll {:href "./community.html"} "Community"]]
+        [:li.nav-item
+         [:a.page-scroll {:href "./about.html"} "About"]]
+        [:li.nav-item
+         [:a.page-scroll {:href "https://github.com/uPortal-Project/uPortal-start"} "Download"]]]]]]]
    [:div#main-slide.carousel.slide {:data-ride "carousel"}
     [:div.carousel-inner
-     [:div.carousel-item.active {:style "background-image: url(/img/slider/slider1.jpeg);"}
+     [:div.carousel-item.active {:style "background-image: url(/img/slider/banner5.jpg);"}
       [:div.carousel-caption
        [:div.container
         [:div.row
