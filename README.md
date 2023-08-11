@@ -107,10 +107,14 @@ If you are more inclined to see your changes before committing them to the repo,
 run the web server to see your changes live. `Java` and `Clojure` will need to be installed.
 You will also need to have a clone of this repo on your local drive.
 
-1. From a command line / shell, navigate to this repo on your drive. 
-  - `$ cd <repo_directory>`
+1. From a command line / shell, navigate to this repo on your drive.
+
+    - `$ cd <repo_directory>`
+
 2. Start the web server and wait 30 seconds for it to start.
-  - `$ clj -M:run`
+
+    - `$ clj -M:run`
+
 3. Point your browser at `http://localhost:8090/` to see the landing page.
 4. Edit or add a page as above.
 5. Navigate to the page and refresh as you save your changes.
