@@ -1,3 +1,4 @@
 dist/
 .cpcache/
 .DS_Store
+.eastwood

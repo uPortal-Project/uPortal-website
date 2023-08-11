@@ -124,6 +124,21 @@ Generating the static files and directories to deploy is a simple command.
 
 This command will copy all the needed files for the website in `dist/`.
 
+## Linting Clojure files
+
+The Clojure source files can be linted with the follow command:
+
+- `$ clj -M:eastwood`
+
+### Formatting Clojure files
+
+The Clojure source files can be checked and formatted with the follow commands:
+
+- `$ clj -M:cljfmt check`
+- `$ clj -M:cljfmt fix`
+
+Note that a Git pre-commit hook has been added to fix formatting issues.
+
 ## Design Decisions
 
 Here are some design decisions for this project:

@@ -1,19 +1,42 @@
 {:paths ["src/clj" "resources"]
- :deps
- {;;me.raynes/cegdown     {:mvn/version "0.1.1"}
-  markdown-clj/markdown-clj {:mvn/version "1.11.4"}
-  org.clojure/clojure   {:mvn/version "1.11.1"}
-  clygments/clygments   {:mvn/version "2.0.2"}
-  enlive/enlive         {:mvn/version "1.1.6"}
-  hiccup/hiccup         {:mvn/version "1.0.5"}
-  optimus/optimus       {:mvn/version "2023-02-08"}
-  ring/ring             {:mvn/version "1.10.0"}
-  ring/ring-defaults    {:mvn/version "0.3.4"}
-  stasis/stasis         {:mvn/version "2023.06.03"}
-  com.taoensso/timbre   {:mvn/version "6.2.2"}}
 
- :aliases
- {:run
-  {:main-opts ["-m" "upwebsite.server"]}
-  :build
-  {:main-opts ["-m" "upwebsite.static"]}}}
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+
+        ;; site generation / optimization
+        stasis/stasis {:mvn/version "2023.06.03"}
+        optimus/optimus {:mvn/version "2023-02-08"}
+
+        ;; markdown
+        markdown-clj/markdown-clj {:mvn/version "1.11.4"}
+
+        ;; html
+        enlive/enlive {:mvn/version "1.1.6"}
+        hiccup/hiccup {:mvn/version "1.0.5"}
+
+        ;; code color syntax
+        clygments/clygments {:mvn/version "2.0.2"}
+
+        ;; web server
+        ring/ring {:mvn/version "1.10.0"}
+        ring/ring-defaults {:mvn/version "0.3.4"}
+
+        ;; logging
+        com.taoensso/timbre {:mvn/version "6.2.2"}}
+
+ :aliases {;; start web server that autoloads changed source files
+           :run
+           {:main-opts ["-m" "upwebsite.server"]}
+
+           ;; generate all static files in dist/ for website
+           :build
+           {:main-opts ["-m" "upwebsite.static"]}
+
+           ;; Clojure linter
+           :eastwood
+           {:main-opts ["-m" "eastwood.lint" {}]
+            :extra-deps {jonase/eastwood {:mvn/version "1.4.0"}}}
+
+           ;; Clojure formatter -- pass either 'fix' or 'check'
+           :cljfmt
+           {:main-opts ["-m" "cljfmt.main" ""]
+            :extra-deps {cljfmt/cljfmt {:mvn/version "0.9.2"}}}}}
