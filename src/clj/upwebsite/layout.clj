@@ -10,12 +10,12 @@
 
 (defn layout-page [request page]
   (html5
-    (layout-page-head request page)
-    [:body
-     (layout-header request page)
-     page
-     (layout-footer request page)
-     (layout-copyright request page)]))
+   (layout-page-head request page)
+   [:body
+    (layout-header request page)
+    page
+    (layout-footer request page)
+    (layout-copyright request page)]))
 
 (defn layout-page-head [request page]
   [:head
@@ -30,8 +30,7 @@
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/nivo-lightbox.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/responsive.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/slicknav.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]
-   ])
+   [:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]])
 
 (defn layout-header [request page]
   [:header#header-wrap
@@ -78,8 +77,7 @@
        [:div {:class footer-col-classes :data-wow-delay "0.2s"}
         [:h3 [:img {:src "img/logo/uportal-logo-white.png" :alt ""}]]
         [:p
-         "uPortal is the leading open-source enterprise portal framework built by and for higher education institutions, K-12 schools, and research communities."]
-        ]
+         "uPortal is the leading open-source enterprise portal framework built by and for higher education institutions, K-12 schools, and research communities."]]
        [:div {:class footer-col-classes :data-wow-delay "0.4s"}
         [:h3 "QUICK LINKS"]
         [:ul
@@ -98,5 +96,4 @@
     [:div.row
      [:div.col-md-12
       [:div.site-info
-       [:p "© Designed and Developed by" [:a {:href "http://uideck.com" :rel "nofollow"} "UIdeck"]
-        ]]]]]])
+       [:p "© Designed and Developed by" [:a {:href "http://uideck.com" :rel "nofollow"} "UIdeck"]]]]]]])

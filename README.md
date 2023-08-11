@@ -130,7 +130,7 @@ The Clojure source files can be linted with the follow command:
 
 - `$ clj -M:eastwood`
 
-### Formatting Clojure files
+## Formatting Clojure files
 
 The Clojure source files can be checked and formatted with the follow commands:
 

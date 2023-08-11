@@ -14,19 +14,17 @@
 (defn get-assets []
   (assets/load-assets "public" [#".*"]))
 
-
 (def pegdown-options ;; https://github.com/sirthias/pegdown
   [:autolinks :fenced-code-blocks :strikethrough])
 
 (defn partial-pages [pages]
   (zipmap (keys pages)
           (map #(fn [req] (layout/layout-page req %)) (vals pages))))
-		
+
 (defn markdown-pages [pages]
   (zipmap (map #(str/replace % #"\.md$" ".html") (keys pages))
           (map #(fn [req] (layout/layout-page req (md/md-to-html-string %)))
-               (vals pages)))
-  )
+               (vals pages))))
 
 (defn get-raw-pages []
   (stasis/merge-page-sources
