@@ -1,8 +1,6 @@
 (ns upwebsite.web
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]
+  (:require [clojure.string :as str]
             [markdown.core :as md]
-            ;;[me.raynes.cegdown :as md]
             [optimus.assets :as assets]
             [optimus.optimizations :as optimizations]
             [optimus.prime :as optimus]
@@ -13,9 +11,6 @@
 
 (defn get-assets []
   (assets/load-assets "public" [#".*"]))
-
-(def pegdown-options ;; https://github.com/sirthias/pegdown
-  [:autolinks :fenced-code-blocks :strikethrough])
 
 (defn partial-pages [pages]
   (zipmap (keys pages)
