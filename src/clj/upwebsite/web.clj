@@ -32,13 +32,19 @@
     :partials (partial-pages (stasis/slurp-directory "resources/partials" #".*\.html$"))
     :markdown (markdown-pages (stasis/slurp-directory "resources/md" #".*\.md$"))}))
 
-(defn prepare-page [page req]
-  (-> (if (string? page) page (page req))
-      highlight-code-blocks))
+(defn prepare-page
+  "From a URL:page pair and request, create the page (if not a string) and post-process."
+  [[url page] req]
+  (let [prep-page (if (string? page) page (page req))] ;; page is string or fn
+    (if (str/ends-with? url ".html")
+      (highlight-code-blocks prep-page)
+      prep-page)))
 
-(defn prepare-pages [pages]
+(defn prepare-pages
+  "Create a map of URLs -> (pepare-page page) functions from map of URL -> raw pages."
+  [pages]
   (zipmap (keys pages)
-          (map #(partial prepare-page %) (vals pages))))
+          (map #(partial prepare-page %) pages)))
 
 (defn get-pages []
   (prepare-pages (get-raw-pages)))
