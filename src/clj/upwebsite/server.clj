@@ -1,10 +1,26 @@
 (ns upwebsite.server
-  (:require [ring.adapter.jetty :refer [run-jetty]]
+  (:require [optimus.optimizations :as optimizations]
+            [optimus.prime :as optimus]
+            [optimus.strategies :refer [serve-live-assets serve-frozen-assets]]
+            [ring.adapter.jetty :refer [run-jetty]]
             [ring.middleware.reload :refer [wrap-reload]]
+            [stasis.core :as stasis]
             [taoensso.timbre :as log]
-            [upwebsite.web :refer [dev-app prod-app]]))
+            [upwebsite.web :refer [get-pages get-assets]]))
 
 (defonce server (atom nil))
+
+(def dev-app
+  (-> (stasis/serve-pages get-pages)
+      (optimus/wrap get-assets
+                    optimizations/none
+                    serve-live-assets)))
+
+(def prod-app
+  (-> (stasis/serve-pages get-pages)
+      (optimus/wrap get-assets
+                    optimizations/all
+                    serve-frozen-assets)))
 
 (defn start-server! [& [port mode]]
   (log/debug "Mode: " mode)
