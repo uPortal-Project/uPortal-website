@@ -76,7 +76,7 @@
 		   [:li.ud-submenu-item
 		    [:a.ud-submenu-link {:href "./devdocs.html"} "Developer Guide"]]
 		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./deploydocs.html"} "Deployment Guider"]]]]
+		    [:a.ud-submenu-link {:href "./deploydocs.html"} "Deployment Guide"]]]]
         [:li.nav-item.nav-item-has-children 
          [:a.page-scroll.subpage {:href "./community.html"} "Community"]
 		  [:ul.ud-submenu
