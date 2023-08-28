@@ -53,21 +53,66 @@
        [:ul.navbar-nav.ml-auto
         [:li.nav-item.active
          [:a.page-scroll {:href "./index.html"} "Home"]]
-        [:li.nav-item
-         [:a.page-scroll {:href "./community.html"} "Community"]]
-        [:li.nav-item
-         [:a.page-scroll {:href "./about.html"} "About"]]
-        [:li.nav-item
-         [:a.page-scroll {:href "https://github.com/uPortal-Project/uPortal-start"} "Download"]]]]]]]
+        [:li.nav-item.nav-item-has-children 
+         [:a.page-scroll.subpage {:href "./about.html"} "About"]
+		  [:ul.ud-submenu
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./apereo.html"} "Apereo Foundation"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./governance.html"} "Governance"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./partners.html"} "Partners"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./news.html"} "News"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./privacy.html"} "Data Privacy Policy"]]]]
+        [:li.nav-item.nav-item-has-children 
+         [:a.page-scroll.subpage {:href "./support.html"} "Support"]
+		  [:ul.ud-submenu
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./userdocs.html"} "User Guide"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./admindocs.html"} "Admin Guide"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./devdocs.html"} "Developer Guide"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./deploydocs.html"} "Deployment Guider"]]]]
+        [:li.nav-item.nav-item-has-children 
+         [:a.page-scroll.subpage {:href "./community.html"} "Community"]
+		  [:ul.ud-submenu
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./roadmap.html"} "Roadmap"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./lists.html"} "Mailing List"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./conduct.html"} "Code of Conduct"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./committers.html"} "Committers"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./onboarding.html"} "Contributor Onboarding"]]]]
+        [:li.nav-item.nav-item-has-children 
+         [:a.page-scroll.subpage {:href "./casestudies.html"} "Case Studies"]
+		  [:ul.ud-submenu
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./casestudies.html"} "Case Studies"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./showcases.html"} "Showcases"]]]]
+        [:li.nav-item.nav-item-has-children 
+         [:a.page-scroll.subpage {:href "./events.html"} "Events"]
+		  [:ul.ud-submenu
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./devdays.html"} "Dev Days"]]
+		   [:li.ud-submenu-item
+		    [:a.ud-submenu-link {:href "./calls.html"} "Monthly Calls"]]]]]]]]]
    [:div#main-slide.carousel.slide {:data-ride "carousel"}
     [:div.carousel-inner
-     [:div.carousel-item.active {:style "background-image: url(/img/slider/banner5.jpg);"}
+     [:div.carousel-item.subpage.active {:style "background-image: url(/img/slider/banner2.jpg);"}
       [:div.carousel-caption
        [:div.container
         [:div.row
          [:div.col-lg-12
-          [:h1.wow.fadeInDown.heading {:data-wow-delay ".4s"}
-           "Designing for Student Engagement"]]]]]]]]])
+          [:h1.wow.fadeInDown.heading.subpage {:data-wow-delay ".4s"}
+           ""]]]]]]]]])
 
 (defn layout-footer [request page]
   (let [footer-col-classes  "col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp"] ;; repeated in 3 divs
@@ -85,7 +130,7 @@
           [:a {:href "#"} "About Us"]]]]
        [:div {:class footer-col-classes :data-wow-delay "0.8s"}
         [:h3 "FOLLOW US ON"]
-        [:ul
+        [:ul.footer-social
          [:li
           [:a.twitter {:href "https://twitter.com/uPortal"}
            [:i.lni-twitter-filled]]]]]]]]))

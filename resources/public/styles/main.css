@@ -584,6 +584,9 @@ a.back-to-top:hover,a.back-to-top:focus{
     transition:all .3s ease-out 0s;
     position:relative
 }
+.navbar-nav .nav-item a.subpage{
+ color:#4065b0;	
+}	
 @media only screen and (min-width:768px) and (max-width:991px){
     .navbar-nav .nav-item a{
         color:#212121;
@@ -1844,9 +1847,16 @@ a.back-to-top:hover,a.back-to-top:focus{
     background-position:center center;
     background-size:cover
 }
+#main-slide .carousel-item.subpage{
+    height:300px;
+}
+
 @media only screen and (min-width:1400px){
     #main-slide .carousel-item{
         height:650px
+    }
+    #main-slide .carousel-item.subpage{
+        height:300px
     }
 }
 @media(max-width:767px){
@@ -1875,6 +1885,10 @@ a.back-to-top:hover,a.back-to-top:focus{
     letter-spacing:.1rem;
     margin-top:30px;
 }
+#main-slide .carousel-item .carousel-caption .heading.subpage{
+	margin-top:0;
+}
+	
 @media only screen and (min-width:992px) and (max-width:1199px){
     #main-slide .carousel-item .carousel-caption .heading{
         font-size:40px
