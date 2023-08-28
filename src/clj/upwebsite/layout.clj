@@ -23,14 +23,14 @@
    [:meta {:name "viewport"
            :content "width=device-width, initial-scale=1.0"}]
    [:title "uPortal"]
-   [:link {:rel "stylesheet" :href (link/file-path request "styles/main.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "styles/line-icons.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "styles/animate.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "styles/bootstrap.min.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "styles/nivo-lightbox.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "styles/responsive.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "styles/slicknav.css")}]
-   [:link {:rel "stylesheet" :href (link/file-path request "pygments-css/autumn.css")}]])
+   [:link {:rel "stylesheet" :href (link/file-path request "/styles/main.css")}]
+   [:link {:rel "stylesheet" :href (link/file-path request "/styles/line-icons.css")}]
+   [:link {:rel "stylesheet" :href (link/file-path request "/styles/animate.css")}]
+   [:link {:rel "stylesheet" :href (link/file-path request "/styles/bootstrap.min.css")}]
+   [:link {:rel "stylesheet" :href (link/file-path request "/styles/nivo-lightbox.css")}]
+   [:link {:rel "stylesheet" :href (link/file-path request "/styles/responsive.css")}]
+   [:link {:rel "stylesheet" :href (link/file-path request "/styles/slicknav.css")}]
+   [:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]])
 
 (defn layout-header [request page]
   [:header#header-wrap
@@ -38,7 +38,7 @@
     [:div.container
      [:div.navbar.navbar-expand-lg
       [:a.navbar-brand {:href "index.html"}
-       [:img {:src "img/logo/uportal-logo-white.png" :alt "Logo"}]]
+       [:img {:src "/img/logo/uportal-logo-white.png" :alt "Logo"}]]
       [:button.navbar-toggler
        {:type "button"
         :data-toggle "collapse"
