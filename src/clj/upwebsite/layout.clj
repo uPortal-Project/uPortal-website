@@ -53,57 +53,57 @@
        [:ul.navbar-nav.ml-auto
         [:li.nav-item.active
          [:a.page-scroll {:href "./index.html"} "Home"]]
-        [:li.nav-item.nav-item-has-children 
+        [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "./about.html"} "About"]
-		  [:ul.ud-submenu
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./apereo.html"} "Apereo Foundation"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./governance.html"} "Governance"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./partners.html"} "Partners"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./news.html"} "News"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./privacy.html"} "Data Privacy Policy"]]]]
-        [:li.nav-item.nav-item-has-children 
+         [:ul.ud-submenu
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./apereo.html"} "Apereo Foundation"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./governance.html"} "Governance"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./partners.html"} "Partners"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./news.html"} "News"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./privacy.html"} "Data Privacy Policy"]]]]
+        [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "./support.html"} "Support"]
-		  [:ul.ud-submenu
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./userdocs.html"} "User Guide"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./admindocs.html"} "Admin Guide"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./devdocs.html"} "Developer Guide"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./deploydocs.html"} "Deployment Guide"]]]]
-        [:li.nav-item.nav-item-has-children 
+         [:ul.ud-submenu
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./userdocs.html"} "User Guide"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./admindocs.html"} "Admin Guide"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./devdocs.html"} "Developer Guide"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./deploydocs.html"} "Deployment Guide"]]]]
+        [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "./community.html"} "Community"]
-		  [:ul.ud-submenu
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./roadmap.html"} "Roadmap"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./lists.html"} "Mailing List"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./conduct.html"} "Code of Conduct"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./committers.html"} "Committers"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./onboarding.html"} "Contributor Onboarding"]]]]
-        [:li.nav-item.nav-item-has-children 
+         [:ul.ud-submenu
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./roadmap.html"} "Roadmap"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./lists.html"} "Mailing List"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./conduct.html"} "Code of Conduct"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./committers.html"} "Committers"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./onboarding.html"} "Contributor Onboarding"]]]]
+        [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "./casestudies.html"} "Case Studies"]
-		  [:ul.ud-submenu
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./casestudies.html"} "Case Studies"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./showcases.html"} "Showcases"]]]]
-        [:li.nav-item.nav-item-has-children 
+         [:ul.ud-submenu
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./casestudies.html"} "Case Studies"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./showcases.html"} "Showcases"]]]]
+        [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "./events.html"} "Events"]
-		  [:ul.ud-submenu
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./devdays.html"} "Dev Days"]]
-		   [:li.ud-submenu-item
-		    [:a.ud-submenu-link {:href "./calls.html"} "Monthly Calls"]]]]]]]]]
+         [:ul.ud-submenu
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./devdays.html"} "Dev Days"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "./calls.html"} "Monthly Calls"]]]]]]]]]
    [:div#main-slide.carousel.slide {:data-ride "carousel"}
     [:div.carousel-inner
      [:div.carousel-item.subpage.active {:style "background-image: url(/img/slider/banner2.jpg);"}
