@@ -19,6 +19,7 @@
     (->> parts
          next
          drop-last
+         (filter #(not= "index" (s/lower-case %)))
          (map capitalize-words)
          (s/join " - "))))
 
