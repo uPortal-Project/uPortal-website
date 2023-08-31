@@ -3,21 +3,26 @@
             [optimus.link :as link]
             [stasis.core :as stasis]))
 
-(declare layout-page-head)
-(declare layout-header)
-(declare layout-footer)
-(declare layout-copyright)
+(declare default-layout-page)
+(declare default-layout-page-head)
+(declare default-layout-header)
+(declare default-layout-footer)
+(declare default-layout-copyright)
 
-(defn layout-page [request page]
+(defn layout-page ^String [request page-data]
+  (let [page (:html-fragment page-data)]
+    (default-layout-page request page)))
+
+(defn default-layout-page ^String [request ^String page]
   (html5
-   (layout-page-head request page)
+   (default-layout-page-head request page)
    [:body
-    (layout-header request page)
+    (default-layout-header request page)
     page
-    (layout-footer request page)
-    (layout-copyright request page)]))
+    (default-layout-footer request page)
+    (default-layout-copyright request page)]))
 
-(defn layout-page-head [request page]
+(defn default-layout-page-head [request page]
   [:head
    [:meta {:charset "utf-8"}]
    [:meta {:name "viewport"
@@ -32,7 +37,7 @@
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/slicknav.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]])
 
-(defn layout-header [request page]
+(defn default-layout-header [request page]
   [:header#header-wrap
    [:div.navigation
     [:div.container
@@ -114,7 +119,7 @@
           [:h1.wow.fadeInDown.heading.subpage {:data-wow-delay ".4s"}
            ""]]]]]]]]])
 
-(defn layout-footer [request page]
+(defn default-layout-footer [request page]
   (let [footer-col-classes  "col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp"] ;; repeated in 3 divs
     [:footer.footer-area.section-padding
      [:div.container
@@ -135,7 +140,7 @@
           [:a.twitter {:href "https://twitter.com/uPortal"}
            [:i.lni-twitter-filled]]]]]]]]))
 
-(defn layout-copyright [request page]
+(defn default-layout-copyright [request page]
   [:div#copyright
    [:div.container
     [:div.row
