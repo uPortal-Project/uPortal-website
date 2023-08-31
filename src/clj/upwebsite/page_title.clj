@@ -2,14 +2,24 @@
   "Functions to calculate page titles."
   (:require [clojure.string :as s]))
 
+(defn- capitalize-words
+  "fn from the clojuredocs.org website for capitalize fn.
+  Capitalize every word in a string"
+  [words]
+  (->> (s/split (str words) #"\b")
+       (map s/capitalize)
+       s/join))
+
 (defn- url->title
   "Calculate title string based on url"
   [url]
-  (let [parts (s/split url #"/|\.")]
+  (let [parts (-> url
+                  (s/replace #"-" " ")
+                  (s/split #"/|\."))]
     (->> parts
          next
          drop-last
-         (map s/capitalize)
+         (map capitalize-words)
          (s/join " - "))))
 
 (defn ->title

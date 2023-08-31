@@ -1,6 +1,7 @@
 (ns upwebsite.layout.default
   "Default layout for most subpages."
-  (:require [hiccup.page :refer [html5]]
+  (:require [clojure.string :as s]
+            [hiccup.page :refer [html5]]
             [optimus.link :as link]))
 
 (declare default-layout-page)
@@ -11,21 +12,25 @@
 
 ;; TODO: change functions to take page-data instead of just page
 
-(defn default-layout-page ^String [request ^String page]
-  (html5
-   (default-layout-page-head request page)
-   [:body
-    (default-layout-header request page)
-    page
-    (default-layout-footer request page)
-    (default-layout-copyright request page)]))
+(defn default-layout-page ^String [request page-data]
+  (prn "Layout")
+  (prn (keys page-data))
+  (let [page (:html-fragment page-data)
+        title (s/join ": " ["uPortal" (:title page-data)])]
+    (html5
+     (default-layout-page-head request page title)
+     [:body
+      (default-layout-header request page)
+      page
+      (default-layout-footer request page)
+      (default-layout-copyright request page)])))
 
-(defn default-layout-page-head [request page]
+(defn default-layout-page-head [request page title]
   [:head
    [:meta {:charset "utf-8"}]
    [:meta {:name "viewport"
            :content "width=device-width, initial-scale=1.0"}]
-   [:title "uPortal"]
+   [:title title]
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/main.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/line-icons.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/animate.css")}]
