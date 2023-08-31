@@ -1,5 +1,5 @@
-(ns ^{:doc "Highlight code blocks with pygments CSS."}
- upwebsite.highlight
+(ns upwebsite.highlight
+  "Highlight code blocks with pygments CSS."
   (:require [clojure.java.io :as io]
             [clygments.core :as pygments]
             [net.cgrand.enlive-html :as enlive]))

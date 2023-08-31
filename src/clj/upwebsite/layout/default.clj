@@ -1,5 +1,5 @@
-(ns ^{:doc "Default layout for most subpages."}
-  upwebsite.layout.default
+(ns upwebsite.layout.default
+  "Default layout for most subpages."
   (:require [hiccup.page :refer [html5]]
             [optimus.link :as link]))
 
@@ -8,6 +8,8 @@
 (declare default-layout-header)
 (declare default-layout-footer)
 (declare default-layout-copyright)
+
+;; TODO: change functions to take page-data instead of just page
 
 (defn default-layout-page ^String [request ^String page]
   (html5

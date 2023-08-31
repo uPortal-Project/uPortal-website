@@ -4,6 +4,7 @@
             [optimus.assets :as assets]
             [stasis.core :as stasis]
             [upwebsite.highlight :refer [highlight-code-blocks]]
+            [upwebsite.page-title :refer [->title]]
             [upwebsite.layout.core :as layout]))
 
 (defn get-assets
@@ -17,7 +18,8 @@
   [[url page]]
   (let [page-data {:url url :html-fragment page}]
     (assoc page-data
-           :html-fn (fn [req] (layout/layout-page req page-data)))))
+           :html-fn (fn [req] (layout/layout-page req page-data))
+           :title (->title page-data))))
 
 (defn partial-pages
   "Given a map of url->pages likely from resources/partials/, create a new map
@@ -37,7 +39,8 @@
         basic-data {:url (md->html url) :html-fragment html :markdown page}
         page-data (into basic-data (md/md-to-meta page))]
     (assoc page-data
-           :html-fn (fn [req] (layout/layout-page req page-data)))))
+           :html-fn (fn [req] (layout/layout-page req page-data))
+           :title (->title page-data))))
 
 (defn markdown-pages
   "Given a map of url->pages likely from resources/md/, create a new map
