@@ -4,7 +4,7 @@
             [optimus.assets :as assets]
             [stasis.core :as stasis]
             [upwebsite.highlight :refer [highlight-code-blocks]]
-            [upwebsite.layout :as layout]))
+            [upwebsite.layout.core :as layout]))
 
 (defn get-assets
   "Pick up all files under resources/public/ for optimization"

@@ -1,17 +1,13 @@
-(ns upwebsite.layout
+(ns ^{:doc "Default layout for most subpages."}
+  upwebsite.layout.default
   (:require [hiccup.page :refer [html5]]
-            [optimus.link :as link]
-            [stasis.core :as stasis]))
+            [optimus.link :as link]))
 
 (declare default-layout-page)
 (declare default-layout-page-head)
 (declare default-layout-header)
 (declare default-layout-footer)
 (declare default-layout-copyright)
-
-(defn layout-page ^String [request page-data]
-  (let [page (:html-fragment page-data)]
-    (default-layout-page request page)))
 
 (defn default-layout-page ^String [request ^String page]
   (html5
