@@ -573,10 +573,10 @@ a.back-to-top:hover,a.back-to-top:focus{
 }
 .navbar-nav .nav-item a{
     color:#fff;
-    padding:10px 0;
+    /*padding:10px 0;*/
     /*text-transform:uppercase;*/
 	font-size:16px;
-    background:0 0;
+    /*background:0 0; */
     -webkit-transition:all .3s ease-out 0s;
     -moz-transition:all .3s ease-out 0s;
     -ms-transition:all .3s ease-out 0s;
