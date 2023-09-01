@@ -13,8 +13,6 @@
 ;; TODO: change functions to take page-data instead of just page
 
 (defn default-layout-page ^String [request page-data]
-  (prn "Layout")
-  (prn (keys page-data))
   (let [page (:html-fragment page-data)
         title (str "uPortal: " (:title page-data))
 		heading (str (:title page-data))]

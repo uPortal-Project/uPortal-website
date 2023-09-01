@@ -6,9 +6,13 @@
             [upwebsite.highlight :refer [highlight-code-blocks]]
             [upwebsite.layout.core :as layout]))
 
+(defonce context-path (atom ""))
+
 (defn get-assets
-  "Pick up all files under resources/public/ for optimization" []
-  (assets/load-assets "public" [#".*"]))
+  "Pick up all files under resources/public/ for optimization"
+  []
+  (let [assets (assets/load-assets "public" [#".*"])]
+    (map #(assoc % :context-path @context-path) assets)))
 
 (defn partial-page-metadata
   "Given a url->page map entry, return a map of metadata for the page

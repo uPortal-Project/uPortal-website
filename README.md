@@ -120,17 +120,18 @@ You will also need to have a clone of this repo on your local drive.
 5. Navigate to the page and refresh as you save your changes.
 6. To stop the web server, use Ctrl+C in the command line / shell.
 
-You can also specify the port and mode (dev|prod).
+You can also specify the port, mode (dev|prod), and context-path for assets.
 
-  - `$clj -M:run 8090 prod`
+  - `$clj -M:run 8090 prod /uPortal-website`
 
 If you want to specify a mode, you have to include the port.
 
 ## Generating distribution files
 
-Generating the static files and directories to deploy is a simple command.
+Generating the static files and directories to deploy is a simple command
+with one optional parameter: context-path for assets.
 
-- `$ clj -M:build`
+- `$ clj -M:build /uPortal-website`
 
 This command will copy all the needed files for the website in `dist/`.
 
