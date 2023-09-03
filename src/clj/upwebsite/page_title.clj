@@ -10,8 +10,8 @@
        (map s/capitalize)
        s/join))
 
-(defn- url->title
-  "Calculate title string based on url"
+(defn url->title-parts
+  "Calculate title string parts based on url"
   [url]
   (let [parts (-> url
                   (s/replace #"-" " ")
@@ -20,8 +20,12 @@
          next
          drop-last
          (filter #(not= "index" (s/lower-case %)))
-         (map capitalize-words)
-         (s/join " - "))))
+         (map capitalize-words))))
+
+(defn url->title
+  "Calculate title string based on url"
+  [url]
+  (s/join " - " (url->title-parts url)))
 
 (defn ->title
   "Calculate title string based on page metadata."

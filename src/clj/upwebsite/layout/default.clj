@@ -2,7 +2,8 @@
   "Default layout for most subpages."
   (:require [clojure.string :as s]
             [hiccup.page :refer [html5]]
-            [optimus.link :as link]))
+            [optimus.link :as link]
+            [upwebsite.page-title :refer [url->title-parts]]))
 
 (declare layout-page)
 (declare layout-page-head)
@@ -10,12 +11,17 @@
 (declare layout-footer)
 (declare layout-copyright)
 
-;; TODO: change functions to take page-data instead of just page
+(def support-menu ["/support/index.html"
+                   "/support/user-guide.html"
+                   "/support/admin-guide.html"
+                   "/support/developer-guide.html"
+                   "/support/deployment-guide.html"
+                   "/support/paid-support.html"])
 
 (defn layout-page ^String [request page-data]
   (let [page (:html-fragment page-data)
         title (str "uPortal: " (:title page-data))
-        heading (str (:title page-data))]
+        heading (:title page-data)]
     (html5
      (layout-page-head request page title)
      [:body
@@ -38,6 +44,20 @@
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/responsive.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/slicknav.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]])
+
+(defn menu
+  "Given a list of absolute, local hrefs, use the first as the menu heading (and link)
+  and rest as menu items. Text will use the page-title fn."
+  [request hrefs]
+  (let [path @upwebsite.web/context-path
+        heading (first hrefs)
+        menu-items (rest hrefs)]
+    [:li.nav-item.nav-item-has-children
+     [:a.page-scroll.subpage {:href (str path heading)} (last (url->title-parts heading))]
+     [:ul.ud-submenu
+      (for [menu-item menu-items]
+        [:li.ud-submenu-item
+         [:a.ud-submenu-link {:href (str path menu-item)} (last (url->title-parts menu-item))]])]]))
 
 (defn layout-header [request page heading]
   [:header#header-wrap
@@ -67,6 +87,7 @@
            [:a.ud-submenu-link {:href "/features/case-studies.html"} "Case Studies"]]
           [:li.ud-submenu-item
            [:a.ud-submenu-link {:href "/features/showcases.html"} "Showcases"]]]]
+        (menu request support-menu)
         [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "/support/index.html"} "Support"]
          [:ul.ud-submenu
@@ -114,7 +135,7 @@
           [:li.ud-submenu-item
            [:a.ud-submenu-link {:href "/about/data-privacy-policy.html"} "Data Privacy Policy"]]]]
         [:li.nav-item
-         [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href (link/file-path request "/support/deployment-guide.html")} "Try it out!"]]]]]]]
+         [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href (str @upwebsite.web/context-path "/support/deployment-guide.html")} "Try it out!"]]]]]]]
    [:div#main-slide.carousel.slide {:data-ride "carousel"}
     [:div.carousel-inner
      [:div.carousel-item.subpage.active {:style (str  "background-image: url(" (link/file-path request "/img/slider/banner2.jpg") ");")}
