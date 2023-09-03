@@ -4,27 +4,27 @@
             [hiccup.page :refer [html5]]
             [optimus.link :as link]))
 
-(declare default-layout-page)
-(declare default-layout-page-head)
-(declare default-layout-header)
-(declare default-layout-footer)
-(declare default-layout-copyright)
+(declare layout-page)
+(declare layout-page-head)
+(declare layout-header)
+(declare layout-footer)
+(declare layout-copyright)
 
 ;; TODO: change functions to take page-data instead of just page
 
-(defn default-layout-page ^String [request page-data]
+(defn layout-page ^String [request page-data]
   (let [page (:html-fragment page-data)
         title (str "uPortal: " (:title page-data))
-		heading (str (:title page-data))]
+        heading (str (:title page-data))]
     (html5
-     (default-layout-page-head request page title)
+     (layout-page-head request page title)
      [:body
-      (default-layout-header request page heading)
+      (layout-header request page heading)
       page
-      (default-layout-footer request page)
-      (default-layout-copyright request page)])))
+      (layout-footer request page)
+      (layout-copyright request page)])))
 
-(defn default-layout-page-head [request page title]
+(defn layout-page-head [request page title]
   [:head
    [:meta {:charset "utf-8"}]
    [:meta {:name "viewport"
@@ -39,7 +39,7 @@
    [:link {:rel "stylesheet" :href (link/file-path request "/styles/slicknav.css")}]
    [:link {:rel "stylesheet" :href (link/file-path request "/pygments-css/autumn.css")}]])
 
-(defn default-layout-header [request page heading]
+(defn layout-header [request page heading]
   [:header#header-wrap
    [:div.navigation
     [:div.container
@@ -60,13 +60,13 @@
        [:ul.navbar-nav.ml-auto
         [:li.nav-item.active
          [:a.page-scroll {:href "/index.html"} "Home"]]
-         [:li.nav-item.nav-item-has-children
-          [:a.page-scroll.subpage {:href "/features/index.html"} "Features"]
-          [:ul.ud-submenu
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/features/case-studies.html"} "Case Studies"]]
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/features/showcases.html"} "Showcases"]]]]
+        [:li.nav-item.nav-item-has-children
+         [:a.page-scroll.subpage {:href "/features/index.html"} "Features"]
+         [:ul.ud-submenu
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/features/case-studies.html"} "Case Studies"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/features/showcases.html"} "Showcases"]]]]
         [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "/support/index.html"} "Support"]
          [:ul.ud-submenu
@@ -78,8 +78,8 @@
            [:a.ud-submenu-link {:href "/support/developer-guide.html"} "Developer Guide"]]
           [:li.ud-submenu-item
            [:a.ud-submenu-link {:href "/support/deployment-guide.html"} "Deployment Guide"]]
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/support/paid-support.html"} "Paid Support"]]]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/support/paid-support.html"} "Paid Support"]]]]
         [:li.nav-item.nav-item-has-children
          [:a.page-scroll.subpage {:href "/community/index.html"} "Community"]
          [:ul.ud-submenu
@@ -100,21 +100,21 @@
            [:a.ud-submenu-link {:href "/events/dev-days.html"} "Dev Days"]]
           [:li.ud-submenu-item
            [:a.ud-submenu-link {:href "/events/monthly-calls.html"} "Monthly Calls"]]]]
-         [:li.nav-item.nav-item-has-children
-          [:a.page-scroll.subpage {:href "/about/index.html"} "About"]
-          [:ul.ud-submenu
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/about/apereo.html"} "Apereo Foundation"]]
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/about/governance.html"} "Governance"]]
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/about/partners.html"} "Partners"]]
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/about/news.html"} "News"]]
-           [:li.ud-submenu-item
-            [:a.ud-submenu-link {:href "/about/data-privacy-policy.html"} "Data Privacy Policy"]]]]
-	        [:li.nav-item
-	         [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href "/support/deployment-guide.html"} "Try it out!"]]]]]]]
+        [:li.nav-item.nav-item-has-children
+         [:a.page-scroll.subpage {:href "/about/index.html"} "About"]
+         [:ul.ud-submenu
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/about/apereo.html"} "Apereo Foundation"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/about/governance.html"} "Governance"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/about/partners.html"} "Partners"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/about/news.html"} "News"]]
+          [:li.ud-submenu-item
+           [:a.ud-submenu-link {:href "/about/data-privacy-policy.html"} "Data Privacy Policy"]]]]
+        [:li.nav-item
+         [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href "/support/deployment-guide.html"} "Try it out!"]]]]]]]
    [:div#main-slide.carousel.slide {:data-ride "carousel"}
     [:div.carousel-inner
      [:div.carousel-item.subpage.active {:style "background-image: url(/img/slider/banner2.jpg);"}
@@ -123,9 +123,9 @@
         [:div.row
          [:div.col-lg-12
           [:h1.wow.fadeInDown.heading.subpage {:data-wow-delay ".4s"}
-           heading ]]]]]]]]])
+           heading]]]]]]]]])
 
-(defn default-layout-footer [request page]
+(defn layout-footer [request page]
   (let [footer-col-classes  "col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp"] ;; repeated in 3 divs
     [:footer.footer-area.section-padding
      [:div.container
@@ -146,7 +146,7 @@
           [:a.twitter {:href "https://twitter.com/uPortal"}
            [:i.lni-twitter-filled]]]]]]]]))
 
-(defn default-layout-copyright [request page]
+(defn layout-copyright [request page]
   [:div#copyright
    [:div.container
     [:div.row
