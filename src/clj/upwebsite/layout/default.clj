@@ -45,7 +45,7 @@
     [:div.container
      [:div.navbar.navbar-expand-lg
       [:a.navbar-brand {:href "index.html"}
-       [:img {:src "/img/logo/uportal-logo-white.png" :alt "Logo"}]]
+       [:img {:src (link/file-path request "/img/logo/uportal-logo-white.png") :alt "Logo"}]]
       [:button.navbar-toggler
        {:type "button"
         :data-toggle "collapse"
@@ -114,10 +114,10 @@
           [:li.ud-submenu-item
            [:a.ud-submenu-link {:href "/about/data-privacy-policy.html"} "Data Privacy Policy"]]]]
         [:li.nav-item
-         [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href "/support/deployment-guide.html"} "Try it out!"]]]]]]]
+         [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href (link/file-path request "/support/deployment-guide.html")} "Try it out!"]]]]]]]
    [:div#main-slide.carousel.slide {:data-ride "carousel"}
     [:div.carousel-inner
-     [:div.carousel-item.subpage.active {:style "background-image: url(/img/slider/banner2.jpg);"}
+     [:div.carousel-item.subpage.active {:style (str  "background-image: url(" (link/file-path request "/img/slider/banner2.jpg") ");")}
       [:div.carousel-caption
        [:div.container
         [:div.row
@@ -131,7 +131,7 @@
      [:div.container
       [:div.row
        [:div {:class footer-col-classes :data-wow-delay "0.2s"}
-        [:h3 [:img {:src "img/logo/uportal-logo-white.png" :alt ""}]]
+        [:h3 [:img {:src (link/file-path request "/img/logo/uportal-logo-white.png") :alt ""}]]
         [:p
          "uPortal is the leading open-source enterprise portal framework built by and for higher education institutions, K-12 schools, and research communities."]]
        [:div {:class footer-col-classes :data-wow-delay "0.4s"}
