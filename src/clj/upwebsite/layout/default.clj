@@ -6,6 +6,14 @@
             [upwebsite.page-title :refer [url->title-parts]]
             [upwebsite.layout.menu :as menu]))
 
+;; could have been just the number, but this gives us more flexibility
+(def banners [{:href "/img/slider/banner1.jpg" :h-color "purple"}
+              {:href "/img/slider/banner2.jpg" :h-color "purple"}
+              {:href "/img/slider/banner3.jpg" :h-color "purple"}
+              {:href "/img/slider/banner4.jpg" :h-color "purple"}
+              {:href "/img/slider/banner5.jpg" :h-color "purple"}
+              {:href "/img/slider/banner6.jpg" :h-color "purple"}])
+
 (declare layout-page)
 (declare layout-page-head)
 (declare layout-header)
@@ -54,42 +62,43 @@
          [:a.ud-submenu-link {:href (str path menu-item)} (last (url->title-parts menu-item))]])]]))
 
 (defn layout-header [request context-path heading]
-  [:header#header-wrap
-   [:div.navigation
-    [:div.container
-     [:div.navbar.navbar-expand-lg
-      [:a.navbar-brand {:href "index.html"}
-       [:img {:src (link/file-path request "/img/logo/uportal-logo-white.png") :alt "Logo"}]]
-      [:button.navbar-toggler
-       {:type "button"
-        :data-toggle "collapse"
-        :data-target "#navbarSupportedContent"
-        :aria-controls "navbarSupportedContent"
-        :aria-expanded "false"
-        :arial-label "Toggle navigation"}
-       [:span.toggler-icon]
-       [:span.toggler-icon]
-       [:span.toggler-icon]]
-      [:div#navbarSupportedContent.collapse.navbar-collapse
-       [:ul.navbar-nav.ml-auto
-        [:li.nav-item.active
-         [:a.page-scroll {:href "/index.html"} "Home"]]
-        (menu request context-path menu/features)
-        (menu request context-path menu/support)
-        (menu request context-path menu/community)
-        (menu request context-path menu/events)
-        (menu request context-path menu/about)
-        [:li.nav-item
-         [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href (str @context-path "/support/deployment-guide.html")} "Try it out!"]]]]]]]
-   [:div#main-slide.carousel.slide {:data-ride "carousel"}
-    [:div.carousel-inner
-     [:div.carousel-item.subpage.active {:style (str  "background-image: url(" (link/file-path request "/img/slider/banner2.jpg") ");")}
-      [:div.carousel-caption
-       [:div.container
-        [:div.row
-         [:div.col-lg-12
-          [:h1.wow.fadeInDown.heading.subpage {:data-wow-delay ".4s"}
-           heading]]]]]]]]])
+  (let [banner (rand-nth banners)]
+    [:header#header-wrap
+     [:div.navigation
+      [:div.container
+       [:div.navbar.navbar-expand-lg
+        [:a.navbar-brand {:href "index.html"}
+         [:img {:src (link/file-path request "/img/logo/uportal-logo-white.png") :alt "Logo"}]]
+        [:button.navbar-toggler
+         {:type "button"
+          :data-toggle "collapse"
+          :data-target "#navbarSupportedContent"
+          :aria-controls "navbarSupportedContent"
+          :aria-expanded "false"
+          :arial-label "Toggle navigation"}
+         [:span.toggler-icon]
+         [:span.toggler-icon]
+         [:span.toggler-icon]]
+        [:div#navbarSupportedContent.collapse.navbar-collapse
+         [:ul.navbar-nav.ml-auto
+          [:li.nav-item.active
+           [:a.page-scroll {:href "/index.html"} "Home"]]
+          (menu request context-path menu/features)
+          (menu request context-path menu/support)
+          (menu request context-path menu/community)
+          (menu request context-path menu/events)
+          (menu request context-path menu/about)
+          [:li.nav-item
+           [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href (str @context-path "/support/deployment-guide.html")} "Try it out!"]]]]]]]
+     [:div#main-slide.carousel.slide {:data-ride "carousel"}
+      [:div.carousel-inner
+       [:div.carousel-item.subpage.active {:style (str  "background-image: url(" (link/file-path request (:href banner)) ");")}
+        [:div.carousel-caption
+         [:div.container
+          [:div.row
+           [:div.col-lg-12
+            [:h1.wow.fadeInDown.heading.subpage {:data-wow-delay ".4s" :style (str "color: " (:h-color banner))}
+             heading]]]]]]]]]))
 
 (defn layout-footer [request page]
   (let [footer-col-classes  "col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp"] ;; repeated in 3 divs
