@@ -81,7 +81,7 @@
         [:div#navbarSupportedContent.collapse.navbar-collapse
          [:ul.navbar-nav.ml-auto
           [:li.nav-item.active
-           [:a.page-scroll {:href "/index.html"} "Home"]]
+           [:a.page-scroll {:href (str @context-path "/index.html")} "Home"]]
           (menu request context-path menu/features)
           (menu request context-path menu/support)
           (menu request context-path menu/community)
