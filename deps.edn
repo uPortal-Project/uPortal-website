@@ -21,7 +21,7 @@
         ring/ring-defaults {:mvn/version "0.4.0"}
 
         ;; logging
-        com.taoensso/timbre {:mvn/version "6.2.2"}}
+        com.taoensso/timbre {:mvn/version "6.3.1"}}
 
  :aliases {;; start web server that autoloads changed source files
            :run
