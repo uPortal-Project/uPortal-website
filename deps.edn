@@ -4,7 +4,7 @@
 
         ;; site generation / optimization
         stasis/stasis {:mvn/version "2023.06.03"}
-        optimus/optimus {:mvn/version "2023-02-08"}
+        optimus/optimus {:mvn/version "2023.10.13"}
 
         ;; markdown
         markdown-clj/markdown-clj {:mvn/version "1.11.4"}
