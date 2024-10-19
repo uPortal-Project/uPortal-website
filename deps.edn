@@ -17,7 +17,7 @@
         clygments/clygments {:mvn/version "2.0.2"}
 
         ;; web server
-        ring/ring {:mvn/version "1.10.0"}
+        ring/ring {:mvn/version "1.13.0"}
         ring/ring-defaults {:mvn/version "0.4.0"}
 
         ;; logging
