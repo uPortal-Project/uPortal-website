@@ -1,6 +1,6 @@
 {:paths ["src/clj" "resources"]
 
- :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+ :deps {org.clojure/clojure {:mvn/version "1.12.1"}
 
         ;; site generation / optimization
         stasis/stasis {:mvn/version "2023.11.21"}
