@@ -1,5 +1,5 @@
 # uPortal Community Code of Conduct
 
-# Firstly stuff
+## Firstly stuff
 
 Stuff about CoC that is firstly.
