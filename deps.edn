@@ -34,7 +34,7 @@
            ;; Clojure linter
            :eastwood
            {:main-opts ["-m" "eastwood.lint" {}]
-            :extra-deps {jonase/eastwood {:mvn/version "1.4.0"}}}
+            :extra-deps {jonase/eastwood {:mvn/version "1.4.3"}}}
 
            ;; Clojure formatter -- pass either 'fix' or 'check'
            :cljfmt
