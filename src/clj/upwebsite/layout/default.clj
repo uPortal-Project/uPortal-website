@@ -27,7 +27,7 @@
      (layout-page-head request title)
      [:body
       (layout-header request context-path heading)
-      page
+      [:section.main-content page]
       (layout-footer request page)
       (layout-copyright request page)])))
 
