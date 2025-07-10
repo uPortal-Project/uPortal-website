@@ -64,10 +64,9 @@
          [:ul.navbar-nav.ml-auto
           [:li.nav-item.active
            [:a.page-scroll {:href "/index.html"} "Home"]]
-          (default/menu request context-path menu/features)
+          (default/menu request context-path menu/showcase)
           (default/menu request context-path menu/support)
           (default/menu request context-path menu/community)
-          (default/menu request context-path menu/events)
           (default/menu request context-path menu/about)
           [:li.nav-item
            [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href (str @context-path "/support/deployment-guide.html")} "Try it out!"]]]]]]]

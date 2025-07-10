@@ -1,1 +1,0 @@
-# uPortal Support Partners

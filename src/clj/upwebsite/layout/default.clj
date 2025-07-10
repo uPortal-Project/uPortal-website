@@ -82,10 +82,9 @@
          [:ul.navbar-nav.ml-auto
           [:li.nav-item.active
            [:a.page-scroll {:href (str @context-path "/index.html")} "Home"]]
-          (menu request context-path menu/features)
+          (menu request context-path menu/showcase)
           (menu request context-path menu/support)
           (menu request context-path menu/community)
-          (menu request context-path menu/events)
           (menu request context-path menu/about)
           [:li.nav-item
            [:a.fadeInUp.wow.btn.btn-common.btn-lg {:href (str @context-path "/support/deployment-guide.html")} "Try it out!"]]]]]]]
