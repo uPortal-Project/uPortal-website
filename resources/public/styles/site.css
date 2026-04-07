@@ -1,0 +1,415 @@
+/* uPortal Website - Custom styles on top of Bootstrap 5.3 */
+
+/* ── Fonts: loaded via <link> in layout head ───────────── */
+
+:root {
+  --up-blue: #4065b0;
+  --up-blue-dark: #2e4a82;
+  --up-orange: #f68923;
+  --up-text: #212529;
+  --up-muted: #6c757d;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--up-text);
+}
+
+/* ── Navbar ────────────────────────────────────────────── */
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .navbar-brand img {
+  height: 36px;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navbar .btn-cta {
+  background-color: var(--up-blue);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.navbar .btn-cta:hover {
+  background-color: var(--up-orange);
+  color: #fff;
+}
+
+/* ── Hero (subpages) ───────────────────────────────────── */
+.page-hero {
+  background: linear-gradient(135deg, var(--up-blue) 0%, var(--up-blue-dark) 100%);
+  color: #fff;
+  padding: 3rem 0 2.5rem;
+}
+
+.page-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ── Hero (homepage) ───────────────────────────────────── */
+.home-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--up-blue) 0%, var(--up-blue-dark) 100%);
+  color: #fff;
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+}
+
+.home-hero h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-hero .hero-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.home-hero p.lead {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.home-hero .btn-hero {
+  background-color: var(--up-orange);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.home-hero .btn-hero:hover {
+  background-color: #e07510;
+  color: #fff;
+}
+
+/* ── Markdown content ──────────────────────────────────── */
+/* This is the critical section that fixes markdown rendering */
+.content-area {
+  padding: 3rem 0;
+}
+
+.content-area h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--up-text);
+}
+
+.content-area h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #dee2e6;
+  color: var(--up-text);
+}
+
+.content-area h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--up-text);
+}
+
+.content-area h4, .content-area h5, .content-area h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--up-text);
+}
+
+.content-area p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  color: var(--up-text);
+}
+
+.content-area ul,
+.content-area ol {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.content-area ul {
+  list-style-type: disc;
+}
+
+.content-area ol {
+  list-style-type: decimal;
+}
+
+.content-area ul li,
+.content-area ol li {
+  margin-bottom: 0.35rem;
+  line-height: 1.7;
+  list-style: inherit;
+}
+
+.content-area a {
+  color: var(--up-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.content-area a:hover {
+  color: var(--up-orange);
+}
+
+.content-area blockquote {
+  border-left: 4px solid var(--up-blue);
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  background: #f8f9fa;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.content-area blockquote p {
+  margin-bottom: 0;
+}
+
+.content-area pre {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.content-area code {
+  font-size: 0.9em;
+}
+
+.content-area p code,
+.content-area li code {
+  background: #f0f0f0;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.content-area table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+
+.content-area table th,
+.content-area table td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.content-area table th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+.content-area table tr:nth-child(even) {
+  background: #fdfdfe;
+}
+
+.content-area img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+}
+
+.content-area hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #dee2e6;
+}
+
+/* ── Homepage sections ─────────────────────────────────── */
+.section-padding {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.services-item {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  transition: box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.services-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.services-item .icon {
+  font-size: 2.5rem;
+  color: var(--up-blue);
+  margin-bottom: 1rem;
+}
+
+.services-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.services-item p {
+  font-size: 0.95rem;
+  color: var(--up-muted);
+  line-height: 1.6;
+}
+
+.counter-section {
+  background: var(--up-blue);
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.counter-section .icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+
+.counter-section p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.counter-section span {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.about-item {
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.about-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.about-item .about-text {
+  padding: 1.25rem;
+}
+
+.about-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.about-item h3 a {
+  color: var(--up-text);
+  text-decoration: none;
+}
+
+.about-item h3 a:hover {
+  color: var(--up-blue);
+}
+
+.about-item p {
+  font-size: 0.95rem;
+  color: var(--up-muted);
+  line-height: 1.6;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+.site-footer {
+  background: #1a1a2e;
+  color: #ccc;
+  padding: 3rem 0 1.5rem;
+}
+
+.site-footer h5 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #aaa;
+}
+
+.site-footer a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--up-orange);
+}
+
+.site-footer .footer-social a {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  color: #aaa;
+}
+
+.site-footer .footer-social a:hover {
+  color: #fff;
+}
+
+.site-footer .footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ── Syntax highlighting (Pygments) ────────────────────── */
+.highlight {
+  background: transparent;
+}
+
+/* ── Utilities ─────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
