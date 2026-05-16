@@ -7,7 +7,7 @@
         optimus/optimus {:mvn/version "2023.11.21"}
 
         ;; markdown
-        markdown-clj/markdown-clj {:mvn/version "1.12.4"}
+        markdown-clj/markdown-clj {:mvn/version "1.12.8"}
 
         ;; html
         enlive/enlive {:mvn/version "1.1.6"}
