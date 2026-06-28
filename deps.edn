@@ -18,7 +18,7 @@
 
         ;; web server
         ring/ring {:mvn/version "1.15.4"}
-        ring/ring-defaults {:mvn/version "0.7.0"}
+        ring/ring-defaults {:mvn/version "0.7.1"}
 
         ;; logging
         com.taoensso/timbre {:mvn/version "6.8.0"}}
